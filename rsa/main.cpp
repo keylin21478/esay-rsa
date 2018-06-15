@@ -6,7 +6,6 @@
 using namespace std;
 
 int a[1000];
-
 //À©Õ¹gcd
 typedef long long ll;
 ll exgcd(ll l, ll r, ll &x, ll &y)
