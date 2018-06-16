@@ -6,6 +6,7 @@
 using namespace std;
 
 int a[1000];
+
 //扩展gcd
 typedef long long ll;
 ll exgcd(ll l, ll r, ll &x, ll &y)
@@ -75,9 +76,12 @@ int get_e(int k) {
 		else { cout << a[m] << " "; }
 	}
 
-	cout << "你想要指定公钥参数e吗？（输入 0 or 1）" << endl;
+	cout << "你想要指定公钥参数e吗？（输入1表示想，0表示不想）" << endl;
+
+
 	int ok; cin >> ok;
 	if (ok) {
+		cout << "请输入指定的参数e" << endl;
 		int e;
 		cin >> e;
 		return e;
@@ -86,6 +90,7 @@ int get_e(int k) {
 		// 第二步，从数组中 随机选取确定的 公钥参数 e
 		srand((unsigned)time(NULL));
 		int r = rand() % (h);
+		cout << "随机选定的参数e为" << a[r] << endl;
 		return a[r];
 	}
 
@@ -133,7 +138,6 @@ int start() {
 	int encryption = PowerMod(msg, e, n);
 	cout << "密文是" << encryption << endl;
 	return 0;
-
 
 }
 int main() {
